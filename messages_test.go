@@ -198,12 +198,10 @@ func TestMessages(t *testing.T) {
 	var msg openai.Message
 	msg, err := client.CreateMessage(ctx, threadID, openai.MessageRequest{
 		Role: "user",
-		Content: []openai.MessageContent{
+		Content: []openai.MessageRequestContent{
 			{
 				Type: "text",
-				Text: &openai.MessageText{
-					Value: "How does AI work?",
-				},
+				Text: "How does AI work?",
 			},
 		},
 		FileIds:  nil,
