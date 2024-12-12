@@ -53,7 +53,7 @@ type ImageFile struct {
 
 type MessageRequest struct {
 	Role        string             `json:"role"`
-	Content     string             `json:"content"`
+	Content     []MessageContent   `json:"content"`
 	FileIds     []string           `json:"file_ids,omitempty"` //nolint:revive // backwards-compatibility
 	Metadata    map[string]any     `json:"metadata,omitempty"`
 	Attachments []ThreadAttachment `json:"attachments,omitempty"`

@@ -211,8 +211,15 @@ func TestRun(t *testing.T) {
 		Thread: openai.ThreadRequest{
 			Messages: []openai.ThreadMessage{
 				{
-					Role:    openai.ThreadMessageRoleUser,
-					Content: "Hello, World!",
+					Role: openai.ThreadMessageRoleUser,
+					Content: []openai.ThreadMessageContent{
+						{
+							Type: "text",
+							Text: openai.ThreadMessageText{
+								Value: "Hello, World!",
+							},
+						},
+					},
 				},
 			},
 		},

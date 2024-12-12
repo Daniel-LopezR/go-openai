@@ -197,8 +197,15 @@ func TestMessages(t *testing.T) {
 	// static assertion of return type
 	var msg openai.Message
 	msg, err := client.CreateMessage(ctx, threadID, openai.MessageRequest{
-		Role:     "user",
-		Content:  "How does AI work?",
+		Role: "user",
+		Content: []openai.MessageContent{
+			{
+				Type: "text",
+				Text: &openai.MessageText{
+					Value: "How does AI work?",
+				},
+			},
+		},
 		FileIds:  nil,
 		Metadata: nil,
 	})

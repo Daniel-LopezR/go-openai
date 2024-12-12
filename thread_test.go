@@ -73,8 +73,15 @@ func TestThread(t *testing.T) {
 	_, err := client.CreateThread(ctx, openai.ThreadRequest{
 		Messages: []openai.ThreadMessage{
 			{
-				Role:    openai.ThreadMessageRoleUser,
-				Content: "Hello, World!",
+				Role: openai.ThreadMessageRoleUser,
+				Content: []openai.ThreadMessageContent{
+					{
+						Type: "text",
+						Text: openai.ThreadMessageText{
+							Value: "Hello, World!",
+						},
+					},
+				},
 			},
 		},
 	})
@@ -156,8 +163,15 @@ func TestAzureThread(t *testing.T) {
 	_, err := client.CreateThread(ctx, openai.ThreadRequest{
 		Messages: []openai.ThreadMessage{
 			{
-				Role:    openai.ThreadMessageRoleUser,
-				Content: "Hello, World!",
+				Role: openai.ThreadMessageRoleUser,
+				Content: []openai.ThreadMessageContent{
+					{
+						Type: "text",
+						Text: openai.ThreadMessageText{
+							Value: "Hello, World!",
+						},
+					},
+				},
 			},
 		},
 	})
