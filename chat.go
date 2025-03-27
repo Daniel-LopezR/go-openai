@@ -65,17 +65,17 @@ type PromptAnnotation struct {
 	ContentFilterResults ContentFilterResults `json:"content_filter_results,omitempty"`
 }
 
-type ImageURLDetail string
+type ImageDetail string
 
 const (
-	ImageURLDetailHigh ImageURLDetail = "high"
-	ImageURLDetailLow  ImageURLDetail = "low"
-	ImageURLDetailAuto ImageURLDetail = "auto"
+	ImageDetailHigh ImageDetail = "high"
+	ImageDetailLow  ImageDetail = "low"
+	ImageDetailAuto ImageDetail = "auto"
 )
 
 type ChatMessageImageURL struct {
-	URL    string         `json:"url,omitempty"`
-	Detail ImageURLDetail `json:"detail,omitempty"`
+	URL    string      `json:"url,omitempty"`
+	Detail ImageDetail `json:"detail,omitempty"`
 }
 
 type ChatMessagePartType string

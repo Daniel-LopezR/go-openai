@@ -554,7 +554,7 @@ func TestMultipartChatCompletions(t *testing.T) {
 						Type: openai.ChatMessagePartTypeImageURL,
 						ImageURL: &openai.ChatMessageImageURL{
 							URL:    "URL",
-							Detail: openai.ImageURLDetailLow,
+							Detail: openai.ImageDetailLow,
 						},
 					},
 				},

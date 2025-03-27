@@ -195,13 +195,14 @@ func TestMessages(t *testing.T) {
 	ctx := context.Background()
 
 	// static assertion of return type
+	prompt := "How does AI work?"
 	var msg openai.Message
 	msg, err := client.CreateMessage(ctx, threadID, openai.MessageRequest{
 		Role: "user",
 		Content: []openai.MessageRequestContent{
 			{
 				Type: "text",
-				Text: "How does AI work?",
+				Text: &prompt,
 			},
 		},
 		FileIds:  nil,

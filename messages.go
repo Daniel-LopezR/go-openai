@@ -48,13 +48,19 @@ type MessageText struct {
 }
 
 type ImageFile struct {
-	FileID string `json:"file_id"`
+	FileID string      `json:"file_id"`
+	Detail ImageDetail `json:"detail,omitempty"`
+}
+type ImageURL struct {
+	URL    string      `json:"url"`
+	Detail ImageDetail `json:"detail,omitempty"`
 }
 
 type MessageRequestContent struct {
 	Type      string     `json:"type"`
-	Text      string     `json:"text,omitempty"`
+	Text      *string    `json:"text,omitempty"`
 	ImageFile *ImageFile `json:"image_file,omitempty"`
+	ImageURL  *ImageURL  `json:"image_url,omitempty"`
 }
 
 type MessageRequest struct {
